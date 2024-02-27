@@ -1,0 +1,16 @@
+///<reference types="Cypress" />
+
+describe("Test mouse actions ", () => {
+    beforeEach(() => {
+      cy.visit("/");
+      cy.get('#actions').invoke("removeAttr", "target").click({ force: true });
+    });
+  
+   it('Scroll element into view', () => {
+    cy.get('#actions').scrollIntoView()
+   });
+   
+  
+   
+  });
+  
