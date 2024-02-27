@@ -7,6 +7,7 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     baseUrl: "http://www.webdriveruniversity.com/",
+    chromeWebSecurity: false,
     //baseUrlStore: "https://automationteststore.com/"
   }
 });
