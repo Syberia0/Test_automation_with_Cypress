@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Handing data via webdriver", () => {
     beforeEach(() => {
-      cy.visit("/");
+      cy.navigateTo_WebdriverUni_Homepage() //other way to navigate from Cypress.command from commands.js
       cy.get("#data-table").invoke("removeAttr", "target").click({ force: true });
     })
       it("Calculate and asserts the total age of all users", () => {
