@@ -19,6 +19,8 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      const file = config.env.configFile || 'development'
+      return getConfigurationByFile(file)
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     excludeSpecPattern: "cypress/e2e/other/*js",
@@ -34,6 +36,10 @@ module.exports = defineConfig({
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
       configFile: 'reporter-config.json',
+    },
+    retries: {
+      runMode: 0,
+      openMode: 0,
     },
     env: {
       webdriveruni_homepage: "http://www.webdriveruniversity.com/",

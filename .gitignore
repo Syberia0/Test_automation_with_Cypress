@@ -2,3 +2,7 @@ fixtures
 node_modules
 screenshots
 other
+results
+mochawesome-report
+videos
+package-lock.jsons
