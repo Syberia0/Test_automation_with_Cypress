@@ -20,7 +20,7 @@ describe("Verify radio buttons via webdriveruniversity ", () => {
         cy.get('[value="lettuce"]').should('be.checked')
         cy.get('[value="pumpkin"]').should('not.be.checked')
 
-        cy.get('[value="pumpkin"]').should('be.disabled')
+        cy.get('[value="cabbage"]').should('be.disabled')
     });
    
   

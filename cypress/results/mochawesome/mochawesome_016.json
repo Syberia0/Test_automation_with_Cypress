@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-01T16:20:43.407Z",
+    "end": "2024-03-01T16:20:45.043Z",
+    "duration": 1636,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a08b0a8-1486-4b69-b7b0-73ed8d6cbc66",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Webdriver\\mouse-actions.js",
+      "file": "cypress\\e2e\\Webdriver\\mouse-actions.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "47a58623-3b7b-4dce-a72a-beab83dbdc58",
+          "title": "Test mouse actions ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Scroll element into view",
+              "fullTitle": "Test mouse actions  Scroll element into view",
+              "timedOut": null,
+              "duration": 857,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get('#actions').scrollIntoView().invoke(\"removeAttr\", \"target\").click({\n  force: true\n});",
+              "err": {},
+              "uuid": "854ba2b8-08a6-40b6-acbc-6efb8ecc91d9",
+              "parentUUID": "47a58623-3b7b-4dce-a72a-beab83dbdc58",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to drag and drop a draggable item",
+              "fullTitle": "Test mouse actions  I should be able to drag and drop a draggable item",
+              "timedOut": null,
+              "duration": 243,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get('#actions').scrollIntoView().invoke(\"removeAttr\", \"target\").click({\n  force: true\n});\ncy.get('#draggable').trigger('mousedown', {\n  which: 1\n});\ncy.get('#droppable').trigger('mousemove').trigger('mouseup', {\n  force: true\n});",
+              "err": {},
+              "uuid": "6acb0b92-1aec-44a7-8a07-5623be607285",
+              "parentUUID": "47a58623-3b7b-4dce-a72a-beab83dbdc58",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to perform a double mouse click",
+              "fullTitle": "Test mouse actions  I should be able to perform a double mouse click",
+              "timedOut": null,
+              "duration": 256,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get('#actions').scrollIntoView().invoke(\"removeAttr\", \"target\").click({\n  force: true\n});\ncy.get('#double-click').dblclick();",
+              "err": {},
+              "uuid": "8a885fe4-3374-45a3-b6c3-22d5119ce197",
+              "parentUUID": "47a58623-3b7b-4dce-a72a-beab83dbdc58",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to hold down the left mouse click button on a given item",
+              "fullTitle": "Test mouse actions  I should be able to hold down the left mouse click button on a given item",
+              "timedOut": null,
+              "duration": 205,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get('#actions').scrollIntoView().invoke(\"removeAttr\", \"target\").click({\n  force: true\n});\ncy.get('#click-box').trigger('mousedown', {\n  which: 1\n}).then($element => {\n  expect($element).to.have.css('background-color', 'rgb(0, 255, 0)');\n});",
+              "err": {},
+              "uuid": "ee2dc9ef-aa05-48fc-aff1-9ea942c3d3cd",
+              "parentUUID": "47a58623-3b7b-4dce-a72a-beab83dbdc58",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "854ba2b8-08a6-40b6-acbc-6efb8ecc91d9",
+            "6acb0b92-1aec-44a7-8a07-5623be607285",
+            "8a885fe4-3374-45a3-b6c3-22d5119ce197",
+            "ee2dc9ef-aa05-48fc-aff1-9ea942c3d3cd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1561,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

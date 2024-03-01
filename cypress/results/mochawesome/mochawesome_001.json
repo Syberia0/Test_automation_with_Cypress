@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-01T16:19:52.223Z",
+    "end": "2024-03-01T16:19:54.916Z",
+    "duration": 2693,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ad907122-9f12-48c4-b481-a1a6748ca26d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\AutomationTestStore\\alias-invoke.js",
+      "file": "cypress\\e2e\\AutomationTestStore\\alias-invoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e70490b-2c06-4f0f-b0bc-ef7781ee1788",
+          "title": "Alias and invoke",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate a specific hair care product ",
+              "fullTitle": "Alias and invoke Validate a specific hair care product ",
+              "timedOut": null,
+              "duration": 932,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://automationteststore.com/\");\ncy.get(\"a[href*='product/category&path=']\").contains(\"Hair Care\").click();\ncy.get(\".fixed_wrapper .prdocutname\").eq(0).invoke(\"text\").as(\"productThumbnail\");\ncy.get(\"@productThumbnail\").its(\"length\").should(\"be.gt\", 5);\ncy.get(\"@productThumbnail\").should(\"include\", \"Seaweed Conditioner\");",
+              "err": {},
+              "uuid": "13dd41e1-c639-4c0f-a19c-ac35ca66bbba",
+              "parentUUID": "1e70490b-2c06-4f0f-b0bc-ef7781ee1788",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate product thumbnail",
+              "fullTitle": "Alias and invoke Validate product thumbnail",
+              "timedOut": null,
+              "duration": 250,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://automationteststore.com/\");\ncy.get(\".thumbnail\").as(\"productThumbnail\");\ncy.get(\"@productThumbnail\").should(\"have.length\", 16);\ncy.get(\"@productThumbnail\").find(\".productcart\").invoke(\"attr\", \"title\").should(\"include\", \"Add to Cart\");",
+              "err": {},
+              "uuid": "c67babd4-428f-4074-afb7-78ce5fabbc48",
+              "parentUUID": "1e70490b-2c06-4f0f-b0bc-ef7781ee1788",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculate of normal and sale product",
+              "fullTitle": "Alias and invoke Calculate of normal and sale product",
+              "timedOut": null,
+              "duration": 425,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://automationteststore.com/\");\ncy.get(\".thumbnail\").as(\"productThumbnail\");\n// cy.get(\"@productThumbnail\").find('.oneprice').each(($el, index, $list) => {\n//    cy.log($el.text()) //logging all product price\ncy.get('.thumbnail').find('.oneprice').invoke('text').as('itemPrice');\ncy.get('.thumbnail').find('.pricenew').invoke('text').as('saleItemPrice');\nvar itemsTotal = 0;\ncy.get('@itemPrice').then($linkText => {\n  var itemsPriceTotal = 0;\n  var itemPrice = $linkText.split('$'); // so whenever there is dollar mark it will split the price form normal and sale \n  var i;\n  for (i = 0; i < itemPrice.length; i++) {\n    //LOOP\n    cy.log(itemPrice[i]); //Non sale items\n    itemsPriceTotal += Number(itemPrice[i]); //it converts it to a number \n  }\n  itemsTotal += itemsPriceTotal;\n  cy.log(\"Non sale price items total: \" + itemsPriceTotal);\n});\ncy.get('@saleItemPrice').then($linkText => {\n  var saleItemsPrice = 0;\n  var saleItemPrice = $linkText.split('$');\n  var i;\n  for (i = 0; i < saleItemPrice.length; i++) {\n    cy.log(saleItemPrice[i]);\n    saleItemsPrice += Number(saleItemPrice[i]);\n  }\n  itemsTotal += saleItemsPrice;\n  cy.log(\"Sale price items total: \" + saleItemsPrice);\n}).then(() => {\n  cy.log(\"The total price of all products: \" + itemsTotal);\n  expect(itemsTotal).to.equal(660.5);\n});",
+              "err": {},
+              "uuid": "3a23d02e-5f06-42cd-aa53-15658efd7e80",
+              "parentUUID": "1e70490b-2c06-4f0f-b0bc-ef7781ee1788",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "13dd41e1-c639-4c0f-a19c-ac35ca66bbba",
+            "c67babd4-428f-4074-afb7-78ce5fabbc48",
+            "3a23d02e-5f06-42cd-aa53-15658efd7e80"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1607,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
