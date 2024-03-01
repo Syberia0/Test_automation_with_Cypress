@@ -4,12 +4,21 @@
   "description": "Testing with Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTest-headless": "npx cypress run",
+    "triggerAllTest-headed": "npx cypress run --headed",
+    "triggerAllTest-chrome": "npx cypress run --browser chrome",
+    "triggerAllTest-daschboard": "npx cypress run --record --key b53ed460-0eb6-4bf4-8c6a-f30f24a10397",
+    "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/e2e/Webdriver/*",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report" : "rm -rf cypress/results/junit/results.xml",
+    "delete-results": "rm -rf cypress/results/* || true"
   },
   "author": "Anna Keesman",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.6",
-    "cypress-xpath": "^2.0.1"
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-xpath": "^2.0.1",
+    "mocha-junit-reporter": "^2.2.1"
   }
 }

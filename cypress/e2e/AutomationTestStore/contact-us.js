@@ -2,6 +2,9 @@
 ///<reference types="cypress-xpath" />
 
 describe("Test Contact Us Form via Automation Test Store ", () => {
+  before(function() {
+    
+  })
     
   it("Should be able to submit a successful sumission via contact form us form ", () => {
     cy.visit("https://automationteststore.com/");
