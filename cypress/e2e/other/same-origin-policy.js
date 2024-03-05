@@ -1,6 +1,6 @@
 ///<reference types="Cypress" />
 
-describe("Cypress web security ", () => {
+describe("Cypress web security check ", () => {
   // beforeEach(() => {
   //   cy.visit("/");
   //   cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
