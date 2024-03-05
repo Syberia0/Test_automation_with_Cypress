@@ -1,0 +1,14 @@
+{
+  "customer1": {
+    "firstname": "Anduin",
+    "lastname": "Wrynn",
+    "email": "anduin.wrynn@azeroth.com",
+    "comment": "Let the light be with u !"
+  },
+  "customer2": {
+    "firstname": "Arthas",
+    "lastname": "Menethil",
+    "email": "arthas.menethil@azeroth.com",
+    "comment": "Frostmourne sword"
+  }
+}
