@@ -31,4 +31,10 @@ describe("Test Contact Us Form via Webdriver ", () => {
      onContact_Us_PO.contactForm_Submission(firstname, lastname, " ", comment, 'body', 'Error: Invalid email address');
     });
   });
+  it("Should be able to submit a successful sumission via contact form us form FAILING ON PURPOSE ", () => {
+    cy.fixture("user-data").then((data) => {
+      const { firstname, lastname, email, comment } = data.customer2;
+     onContact_Us_PO.contactForm_Submission(firstname, lastname, " ", comment, 'body', 'Error: Invalid email address2');
+    });
+  });
 });
