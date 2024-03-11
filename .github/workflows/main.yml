@@ -14,3 +14,9 @@ jobs:
         with:
          
           start: npm run cypress-regression-pack
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+              name: cypress-screenshots
+              path: cypress/screenshots
